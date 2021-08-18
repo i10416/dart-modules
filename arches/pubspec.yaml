@@ -1,0 +1,31 @@
+name: arches
+description: material widgets extension.
+version: 0.0.1
+homepage: https://github.com/ItoYo16u/dart-modules/arches
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+flutter:
+  plugin:
+    platforms:
+    # This plugin project was generated without specifying any
+    # platforms with the `--platform` argument. If you see the `some_platform` map below, remove it and
+    # then add platforms following the instruction here:
+    # https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms
+    # -------------------
+      some_platform:
+        pluginClass: somePluginClass
+    # -------------------
+
+
