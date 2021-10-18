@@ -6,6 +6,7 @@ class InkwellListTile extends StatelessWidget {
       this.subtitle,
       this.leading,
       this.onTap,
+      this.dense = false,
       this.trailing,
       this.verticalPadding = 4,
       this.horizontalPadding = 12,
@@ -15,6 +16,7 @@ class InkwellListTile extends StatelessWidget {
 
   final void Function()? onTap;
   final Widget title;
+  final bool dense;
   final Widget? subtitle;
   final Widget? trailing;
   final Widget? leading;
@@ -31,6 +33,7 @@ class InkwellListTile extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: ListTile(
+          dense: dense,
           leading: leading,
           contentPadding: EdgeInsets.symmetric(
               vertical: verticalPadding, horizontal: horizontalPadding),
