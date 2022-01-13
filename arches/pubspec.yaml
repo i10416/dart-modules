@@ -1,6 +1,6 @@
 name: arches
 description: material widgets extension.
-version: 0.0.1+20211129
+version: 0.0.1+20220113
 homepage: https://github.com/i10416/dart-modules/arches
 
 environment:
