@@ -22,6 +22,20 @@ extension CollectionOps<T> on Iterable<T> {
     });
   }
 
+  // [0,1,2,3,4,5,...] => [(0,1),(1,2),(2,3),(3,4),(4,5),...]
+  Iterable<$<T, T>> slide() =>
+      fold<$<Iterable<$<T, T>>, T?>>($(Iterable<$<T, T>>.empty(), null),
+          (acc, element) {
+        if (acc.$1 == null) {
+          return $(acc.$0, element);
+        } else {
+          return $([...acc.$0, $(acc.$1!, element)], element);
+        }
+      }).$0;
+
+  Iterable<T> intersect<R extends T>(R r) => List.generate(
+      length + length - 1, (i) => i % 2 == 0 ? elementAt(i ~/ 2) : r);
+
   Iterable<$<T, int>> get zipWithIndex => fold<$<List<$<T, int>>, int>>(
       const $([], 0),
       (acc, elm) => $([...acc.$0, $(elm, acc.$1)], acc.$1 + 1)).$0;
