@@ -1,6 +1,6 @@
 name: flechette
 description: lightweight dart extensions.
-version: 0.0.1+20220113
+version: 0.0.1+20220128
 homepage: https://github.com/i10416/dart-modules/flechette
 
 environment:
