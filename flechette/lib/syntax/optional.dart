@@ -7,6 +7,18 @@ extension Optional<T> on T? {
     }
   }
 
+  T? filter(bool Function(T) f) {
+    if (this == null) {
+      return null;
+    } else {
+      if (f(this!)) {
+        return this!;
+      } else {
+        return null;
+      }
+    }
+  }
+
   T getOrElse(T Function() els) {
     if (this == null) {
       return els();

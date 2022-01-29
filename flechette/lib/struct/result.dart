@@ -1,3 +1,5 @@
+import 'package:flechette/struct/tuple.dart';
+
 class Result<T> {
   Result({
     required this.isSuccess,
@@ -23,6 +25,16 @@ class Result<T> {
         errorKey: errorKey,
         errorMessage: errorMessage,
       );
+    }
+  }
+
+  Result<T> mapFailure(
+      $<String, String> Function(String errorKey, String errorMessage) f) {
+    if (isSuccess) {
+      return this;
+    } else {
+      final ee = f(errorKey!, errorMessage!);
+      return Result<T>.failure(ee.$0, ee.$1);
     }
   }
 
