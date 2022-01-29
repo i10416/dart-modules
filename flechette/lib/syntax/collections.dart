@@ -1,9 +1,5 @@
 import 'package:flechette/struct/tuple.dart';
 
-extension OptionalCollectionOps<T> on Iterable<T?> {
-  Iterable<T> get flatten => whereType<T>();
-}
-
 extension CollectionOps<T> on Iterable<T> {
   Iterable<T> sorted([int Function(T, T)? f]) {
     final clone = [...this]..sort(f);

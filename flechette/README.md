@@ -41,6 +41,13 @@ l.zip(['a','b','c','d','e']); // => [(1,'a'),(2,'b'),(3,'c'),(4,'d'),(5,'e')]
 l.intersect(-1) // => [1,-1,2,-1,3,-1,4,-1,5];
 ```
 
+flatmap(iterable)
+```dart
+
+import 'package:flechette/syntax/flatmap_iterable.dart';
+final l = [1,2,3,4,5].flatMap((e) =>  Iterable<int>.generate(e) ); // => [0,0,1,0,1,2,...];
+```
+
 
 Collection/Map
 
@@ -65,6 +72,14 @@ const int? b = null;
 a.fold(() => 'none!')((e) => (e * 100).toString()); // => '100'
 b.fold(() => 'none!')((e) => (e * 100).toString()); // => 'none!'
 ```
+
+```dart
+
+import 'package:flechette/syntax/flatmap_optional.dart';
+[1,2,3,4,5,6,7,8,9,10].flatMap((e) => e %2 == 0 ? e : null); // [2,4,6,8,10];
+```
+
+
 
 dart/core
 
