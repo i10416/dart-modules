@@ -7,6 +7,8 @@ extension Optional<T> on T? {
     }
   }
 
+  bool get isEmpty => this == null;
+
   R Function(R Function(T)) fold<R>(R Function() ifEmpty) {
     if (this == null) {
       return (_) => ifEmpty();
@@ -57,4 +59,6 @@ extension Optional<T> on T? {
       return f(this!);
     }
   }
+
+  List<T> toList() => this == null ? [] : [this!];
 }

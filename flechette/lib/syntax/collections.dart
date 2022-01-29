@@ -10,6 +10,9 @@ extension CollectionOps<T> on Iterable<T> {
     return clone;
   }
 
+  T? get headOption => isEmpty ? null : first;
+  T? get lastOption => isEmpty ? null : last;
+
   Map<S, Iterable<T>> groupBy<S>(S Function(T) f) {
     final m = <S, Iterable<T>>{};
     return fold<Map<S, Iterable<T>>>(m, (acc, element) {
@@ -34,6 +37,31 @@ extension CollectionOps<T> on Iterable<T> {
           return $(acc.$0, element);
         } else {
           return $([...acc.$0, $(acc.$1!, element)], element);
+        }
+      }).$0;
+
+  Iterable<Iterable<T>> sliding(int n) =>
+      fold<$<Iterable<Iterable<T>>, Iterable<Iterable<T>>>>(
+          $(Iterable<Iterable<T>>.empty(), []), (acc, element) {
+        if (acc.$1.isEmpty) {
+          return $(acc.$0, [
+            [element]
+          ]);
+        } else if (acc.$1.first.length == n - 1) {
+          final nxt = acc.$1.skip(1).map((l) => [...l, element]);
+          return $([
+            ...acc.$0,
+            [...acc.$1.first, element]
+          ], [
+            ...nxt,
+            [element]
+          ]);
+        } else {
+          final nxt = acc.$1.map((l) => [...l, element]);
+          return $(acc.$0, [
+            ...nxt,
+            [element]
+          ]);
         }
       }).$0;
 
