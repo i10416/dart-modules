@@ -27,5 +27,16 @@ void main() {
         expect(d, 1);
       });
     });
+    group('fold', () {
+      test('', () {
+        const int? a = 1;
+        const int? b = null;
+
+        final res1 = a.fold(() => 'none!')((e) => (e * 100).toString());
+        final res2 = b.fold(() => 'none!')((e) => (e * 100).toString());
+        expect(res1, '100');
+        expect(res2, 'none!');
+      });
+    });
   });
 }

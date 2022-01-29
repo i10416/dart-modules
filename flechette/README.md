@@ -49,6 +49,13 @@ t
     .map((a)=>  b)
     .filter((b)=> cond(b) )
     .getOrElse(()=>els);
+
+
+const int? a = 1;
+const int? b = null;
+
+a.fold(() => 'none!')((e) => (e * 100).toString()); // => '100'
+b.fold(() => 'none!')((e) => (e * 100).toString()); // => 'none!'
 ```
 
 dart/core

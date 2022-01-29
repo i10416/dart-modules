@@ -7,6 +7,14 @@ extension Optional<T> on T? {
     }
   }
 
+  R Function(R Function(T)) fold<R>(R Function() ifEmpty) {
+    if (this == null) {
+      return (_) => ifEmpty();
+    } else {
+      return (f) => f(this!);
+    }
+  }
+
   T? filter(bool Function(T) f) {
     if (this == null) {
       return null;
