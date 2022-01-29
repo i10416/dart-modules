@@ -63,8 +63,8 @@ void main() {
         test('insert element every 1 step', () {
           final l = [1, 2, 3, 4, 5];
           final m = [1, 2, 3, 4];
-          final l1 = l.intersect(-1);
-          final m1 = m.intersect(-1);
+          final l1 = l.interspace(-1);
+          final m1 = m.interspace(-1);
           expect(l1, containsAllInOrder(<int>[1, -1, 2, -1, 3, -1, 4, -1, 5]));
           expect(m1, containsAllInOrder(<int>[1, -1, 2, -1, 3, -1, 4]));
         });
