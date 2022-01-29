@@ -26,6 +26,14 @@ class Result<T> {
     }
   }
 
+  Result<R> flatMap<R>(Result<R> Function(T) f) {
+    if (isSuccess) {
+      return f(value!);
+    } else {
+      return Result.failure(errorKey!, errorMessage!);
+    }
+  }
+
   final String? errorKey;
   final String? errorMessage;
 }

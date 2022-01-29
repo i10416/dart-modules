@@ -14,5 +14,5 @@ class $<T, S> {
 extension TupleOps<T, S> on $<T, S> {
   $<S, T> swap() => $($1, $0);
   $<P, Q> bimap<P, Q>(P Function(T) f, Q Function(S) g) => $(f($0), g($1));
-  P toProduct<P>(P Function(T, S) f) => f($0, $1);
+  P mapN<P>(P Function(T, S) f) => f($0, $1);
 }

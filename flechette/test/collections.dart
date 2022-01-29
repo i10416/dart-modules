@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:flechette/collections/collections.dart';
 import 'package:flechette/struct/tuple.dart';
+import 'package:flechette/syntax//collections.dart';
 import 'package:test/test.dart';
 
 void main() {
