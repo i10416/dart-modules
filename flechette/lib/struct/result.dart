@@ -26,6 +26,8 @@ class Result<T> {
     }
   }
 
+  T? get toOptional => value;
+
   Result<R> flatMap<R>(Result<R> Function(T) f) {
     if (isSuccess) {
       return f(value!);
