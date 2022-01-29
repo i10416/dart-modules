@@ -1,4 +1,4 @@
-import '../struct/tuple.dart';
+import 'package:flechette/struct/tuple.dart';
 
 extension OptionalCollectionOps<T> on Iterable<T?> {
   Iterable<T> get flatten => whereType<T>();
@@ -57,4 +57,23 @@ extension CollectionOps<T> on Iterable<T> {
   int count(bool Function(T) f) =>
       fold(0, (acc, element) => f(element) ? acc + 1 : acc);
   $<Iterable<T>, Iterable<T>> splitAt(int n) => $(take(n), skip(n));
+}
+
+extension MapOps<K, V> on Map<K, V> {
+  Map<K, V> Function(V? Function(V?)) updateWith(K k) {
+    if (containsKey(k)) {
+      return (f) {
+        final clone = {...this};
+        final deleteIfNull = f(this[k]);
+        if (deleteIfNull == null) {
+          clone.remove(k);
+          return clone;
+        } else {
+          return {...this, k: deleteIfNull};
+        }
+      };
+    } else {
+      return (f) => f(null) == null ? this : <K, V>{...this, k: f(null)!};
+    }
+  }
 }

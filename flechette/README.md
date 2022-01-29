@@ -30,7 +30,7 @@ tpl.mapN((l,r) => T  ); // => T
 
 ## flechette/syntax
 
-Collection
+Collection/Iterable
 
 ```dart
 final l = [1,2,3,4,5];
@@ -40,6 +40,13 @@ l.zip(['a','b','c','d','e']); // => [(1,'a'),(2,'b'),(3,'c'),(4,'d'),(5,'e')]
 l.intersect(-1) // => [1,-1,2,-1,3,-1,4,-1,5];
 ```
 
+
+Collection/Map
+
+```dart
+final map = {'a':1,'b':2,'c':3};
+map.updateWith(key)((v) => v == null ? 'newItem' : '$v already exists');
+```
 
 Optional
 
