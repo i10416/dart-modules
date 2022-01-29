@@ -1,7 +1,7 @@
 name: flechette
-description: lightweight dart extensions.
-version: 0.0.1+20220128
-homepage: https://github.com/i10416/dart-modules/flechette
+description: This package provides lightweight syntax extensions and general purpose helper classes.
+version: 0.0.1
+homepage: https://github.com/i10416/dart-modules/tree/master/flechette
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

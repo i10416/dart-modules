@@ -1,7 +1,8 @@
 # flechette
 
-lightweight dart extensions.
-
+This package includes
+- general purpose helper classes such as tuple, result.
+- Scala-like collection APIs. e.g. `groupBy`,`zipWithIndex`,`sliding(n)`,`fold`
 
 ## flechette/struct
 

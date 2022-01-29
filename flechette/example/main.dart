@@ -9,6 +9,15 @@ void main() {
 
   final l = [1, 2, 3, 4, 5].slide().map((e) => e.swap());
   // =>   <$<int,int>>[(2,1),(3,2),(4,3),(5,4)];
+  final s = [1, 2, 3, 4, 5].flatten();
+  // [1,2,3,4,5];
+  final n = [1, null, 2, null, 3].flatten();
+  // [1,2,3]
+  final z = [1, 2, 3, 4, 5].zip(['a', 'b', 'c']);
+  // [(1,a),(2,b),(3,c)]
   print(m);
   print(l);
+  print(s);
+  print(n);
+  print(z);
 }
