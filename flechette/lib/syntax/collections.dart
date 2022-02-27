@@ -36,6 +36,31 @@ extension CollectionOps<T> on Iterable<T> {
     });
   }
 
+  /// returns a list of list of length up to n.
+  /// example
+  ///
+  /// ```dart
+  /// [0,1,2,3,4,5,6,7,8,9,10].chunk(3) // =>[[0,1,2],[3,4,5],[6,7,8],[9,10]]
+  /// ```
+  ///
+  Iterable<Iterable<T>> chunk(int n) =>  n <= length ? Iterable<Iterable<T>>.generate(length % n == 0 ? length ~/ n : (length ~/ n) +1,(k)=> skip(k*n).take(n)) : [this];
+
+  /// return sublist of range [from,to)
+  ///
+  /// example
+  ///
+  /// ```dart
+  /// [a,b,c,d,e,f,g,h,i,j,k].slice(3,6) // => [d,e,f]
+  /// ```
+  ///
+  Iterable<T> slice(int from,[int? to]) {
+    if(to == null){
+      return skip(from);
+    }else {
+      return skip(from).take(to - from);
+    }
+  }
+
   /// returns a list of pairs of values slided by 1.
   /// example
   /// ```dart
