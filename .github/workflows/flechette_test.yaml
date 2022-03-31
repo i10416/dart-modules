@@ -1,0 +1,31 @@
+name: flechette_test
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'flechette/**'
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'flechette/**'
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    container:
+      image:  google/dart:latest
+    steps:
+      - name: set up repository
+        uses: actions/checkout@v3
+      - name: install deps
+        run: pub get
+        working-directory: ./flechette
+      - name: analyzer
+        run: dartanalyzer --fatal-warnings --fatal-infos .
+        working-directory: ./flechette
+      - name: test
+        run: pub run test ./
+        working-directory: ./flechette
+
