@@ -26,6 +26,6 @@ jobs:
         run: dartanalyzer --fatal-warnings --fatal-infos .
         working-directory: ./flechette
       - name: test
-        run: pub run test ./
+        run: dart test ./test/*
         working-directory: ./flechette
 
