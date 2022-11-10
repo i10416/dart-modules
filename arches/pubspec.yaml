@@ -1,6 +1,6 @@
 name: arches
 description: material widgets extension.
-version: 0.0.1+20220113
+version: 0.1.0
 homepage: https://github.com/i10416/dart-modules/arches
 
 environment:
@@ -16,7 +16,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.0
 
 flutter:
   plugin:

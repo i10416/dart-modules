@@ -5,3 +5,6 @@
 .pub/
 
 build/
+
+# ignore fvm simlink
+.fvm/flutter_sdk
