@@ -1,6 +1,6 @@
 name: flechette
 description: This package provides lightweight syntax extensions and general purpose helper classes.
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/i10416/dart-modules/tree/master/flechette
 
 environment:

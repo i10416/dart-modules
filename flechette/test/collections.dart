@@ -84,42 +84,41 @@ void main() {
       });
       group('slice', () {
         test('collect element [from,to)', () {
-          final l = ['a','b','c','d','e','f','g','h','i','j','k'];
+          final l = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
           expect(
-              l.slice(0,4),
-              containsAllInOrder(<String>['a','b','c','d']));
+              l.slice(0, 4), containsAllInOrder(<String>['a', 'b', 'c', 'd']));
           expect(
               l.slice(3),
-              containsAllInOrder(<String>['d','e','f','g','h','i','j','k']));
+              containsAllInOrder(
+                  <String>['d', 'e', 'f', 'g', 'h', 'i', 'j', 'k']));
           expect(
-              l.slice(3,999),
-              containsAllInOrder(<String>['d','e','f','g','h','i','j','k']));
-          expect(
-              l.slice(3,6),
-              containsAllInOrder(<String>['d','e','f']));
+              l.slice(3, 999),
+              containsAllInOrder(
+                  <String>['d', 'e', 'f', 'g', 'h', 'i', 'j', 'k']));
+          expect(l.slice(3, 6), containsAllInOrder(<String>['d', 'e', 'f']));
         });
       });
       group('chunk(n)', () {
         test('collect element as chunk of size n', () {
-          final l = [1, 2, 3, 4, 5,6,7,8,9,10];
+          final l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
           expect(
               l.chunk(3),
               containsAllInOrder(<Iterable<int>>[
-                [1,2,3],
-                [4,5,6],
-                [7,8,9],
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9],
                 [10]
               ]));
           expect(
               l.chunk(5),
               containsAllInOrder(<Iterable<int>>[
-                [1,2,3,4,5],
-                [6,7,8,9,10],
+                [1, 2, 3, 4, 5],
+                [6, 7, 8, 9, 10],
               ]));
           expect(
               l.chunk(11),
               containsAllInOrder(<Iterable<int>>[
-                [1,2,3,4,5,6,7,8,9,10]
+                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
               ]));
         });
       });
