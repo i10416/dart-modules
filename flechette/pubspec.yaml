@@ -4,7 +4,7 @@ version: 0.1.0
 homepage: https://github.com/i10416/dart-modules/tree/master/flechette
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: "<4.0.0"
 
 
 
